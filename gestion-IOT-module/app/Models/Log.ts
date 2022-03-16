@@ -6,6 +6,9 @@ export default class Log extends BaseModel {
   public id: number
 
   @column()
+  public module_id: number
+
+  @column()
   public etat: boolean
 
   @column()

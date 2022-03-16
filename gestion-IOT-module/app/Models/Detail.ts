@@ -6,6 +6,9 @@ export default class Detail extends BaseModel {
   public id: number
 
   @column()
+  public module_name: string
+
+  @column()
   public etat: boolean
 
   @column()
