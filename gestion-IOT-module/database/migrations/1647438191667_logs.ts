@@ -1,13 +1,16 @@
 import BaseSchema from '@ioc:Adonis/Lucid/Schema'
 
-export default class Modules extends BaseSchema {
-  protected tableName = 'modules'
+export default class Logs extends BaseSchema {
+  protected tableName = 'logs'
 
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
-
+      table.integer('module_id')
+      table.boolean('etat')
+      table.float('value')
       table.timestamp('created_at', { useTz: true })
+      table.timestamp('updated_at', { useTz: true })
     })
   }
 

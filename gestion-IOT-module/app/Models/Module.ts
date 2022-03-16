@@ -20,8 +20,8 @@ export default class Module extends BaseModel {
   public createdAt: DateTime
 
   @hasOne(() => Detail)
-  public module_name: HasOne <typeof Detail>
+  public details: HasOne <typeof Detail>
 
   @hasMany(() => Log)
-  public Log: HasMany <typeof Log>
+  public logs: HasMany <typeof Log>
 }
