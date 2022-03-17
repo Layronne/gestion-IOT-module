@@ -11,7 +11,7 @@ export default class Module extends BaseModel {
   public name: string
 
   @column()
-  public type: string
+  public type: number
 
   @column()
   public value: number
@@ -20,7 +20,7 @@ export default class Module extends BaseModel {
   public createdAt: DateTime
 
   @hasOne(() => Detail)
-  public details: HasOne <typeof Detail>
+  public module_id: HasOne <typeof Detail>
 
   @hasMany(() => Log)
   public logs: HasMany <typeof Log>

@@ -6,7 +6,11 @@ export default class Modules extends BaseSchema {
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
-
+      table.string('name')
+      table.integer('type')
+           .unsigned()
+           .references('details.id')
+      table.integer('value').nullable()
       table.timestamp('created_at', { useTz: true })
     })
   }

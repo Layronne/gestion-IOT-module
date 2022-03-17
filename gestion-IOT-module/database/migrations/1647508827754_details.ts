@@ -5,14 +5,12 @@ export default class Details extends BaseSchema {
 
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
-      table.increments('id')
+      table.increments('id').primary()
+      table.string('type_name')
       table.string('module_name')
       table.boolean('etat')
       table.string('location')
       table.string('transport_type')
-      table.string('type_name')
-      table.timestamp('created_at', { useTz: true })
-      table.timestamp('updated_at', { useTz: true })
     })
   }
 
